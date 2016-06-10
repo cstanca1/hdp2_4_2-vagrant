@@ -16,7 +16,7 @@ This approach has been tested on OS X host, but it should work on all supported 
 3. Download and install git client for your host
 4. Open a command shell and change to the folder where you plan to clone the github repository
 5. Clone the Github repository:  ```git clone https://github.com/cstanca1/hdp2_4_2-vagrant.git```
-6. Change directory to hdp_2.4.2-vagrant, the folder that includes Vagrantfile and: ```mkdir data```. This will be needed for guest VMs to share with the host.
+6. Change directory to hdp_2.4.2-vagrant, the folder that includes Vagrantfile and: ```mkdir data```. This /data folder will be needed for guest VMs to share with the host.
 
 ## Create and Start VMs
 Vagrant (via Vagrantfile) is configured to use Centos 6.7 as the base box and includes the pre-requisites for installing HDP.
@@ -46,6 +46,7 @@ Vagrant (via Vagrantfile) is configured to use Centos 6.7 as the base box and in
 
 ### Setup Ambari Server
 Run the setup command to configure your Ambari Server, Database, JDK, LDAP, and other options:
+
 ```ambari-server setup```
 
 ### Start Ambari Server
