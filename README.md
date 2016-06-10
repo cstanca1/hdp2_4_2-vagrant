@@ -15,27 +15,30 @@ This approach has been tested on OS X host, but it should work on all supported 
 2. Download and install VirtualBox for your host OS: https://www.virtualbox.org/wiki/Downloads
 3. Download and install git client for your host
 4. Open a command shell and change to the folder where you plan to clone the github repository
-5. Clone the Github repository:  
-
-```git clone https://github.com/cstanca1/hdp2_4_2-vagrant.git```
-
-6. Change directory to hdp_2.4.2-vagrant, the folder that includes Vagrantfile
+5. Clone the Github repository:  ```git clone https://github.com/cstanca1/hdp2_4_2-vagrant.git```
+6. Change directory to hdp_2.4.2-vagrant, the folder that includes Vagrantfile and: ```mkdir data```. This will be needed for guest VMs to share with the host.
 
 ## Create and Start VMs
 Vagrant (via Vagrantfile) is configured to use Centos 6.7 as the base box and includes the pre-requisites for installing HDP.
 4 VMs will be created: 1 Ambari Server (ambari1), 1 Hadoop master (master1) and 2 slaves (slave1, slave2).
 
 ```vagrant up ambari1```
+
 ```vagrant up master1```
+
 ```vagrant up slave1```
+
 ```vagrant up slave2```
 
 ## Install and Setup Ambari Server
 
 ### Create a Local Ambari  Repository
 ```vagrant ssh ambari1```
+
 ```sudo su -```
+
 ```cd /etc/yum.repos.d```
+
 ```wget http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.2.2.0/ambari.repo```
 
 ### Install Ambari Server
@@ -51,8 +54,3 @@ Run the setup command to configure your Ambari Server, Database, JDK, LDAP, and 
 ### Deploy Cluster using Ambari Web UI
 Open up a web browser and go to http://ambari1:8080.
 Log in with username admin and password admin and follow on-screen instructions, selecting services of interest.
-
-
-
-
-
