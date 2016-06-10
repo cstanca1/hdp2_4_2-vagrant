@@ -1,0 +1,6 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.0.11 ambari1.mycluster ambari1
+192.168.0.12 master1.mycluster master1
+192.168.0.21 slave1.mycluster slave1
+192.168.0.22 slave2.mycluster slave2
