@@ -54,4 +54,4 @@ Run the setup command to configure your Ambari Server, Database, JDK, LDAP, and 
 
 ### Deploy Cluster using Ambari Web UI
 Open up a web browser and go to http://ambari1:8080.
-Log in with username admin and password admin and follow on-screen instructions, selecting services of interest.
+Log in with username admin and password admin and follow on-screen instructions, selecting hosts created and services of interest.
