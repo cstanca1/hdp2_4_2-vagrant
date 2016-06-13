@@ -33,6 +33,7 @@ Vagrant (via Vagrantfile) is configured to use Centos 6.7 as the base box and in
 ## Install and Setup Ambari Server
 
 ### Create a Local Ambari  Repository
+
 ```vagrant ssh ambari1```
 
 ```sudo su -```
@@ -41,7 +42,11 @@ Vagrant (via Vagrantfile) is configured to use Centos 6.7 as the base box and in
 
 ```wget http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.2.2.0/ambari.repo```
 
+Add here your id_rsa and id_rsa.pub keys (see https://help.ubuntu.com/community/SSH/OpenSSH/Keys for instructions on Ubuntu, applicable to all flavors of Linux, including CentOS). You could perform these steps on ambari1 and copy these two files to your /vagrant folder which shares data between guest and host.
+
+
 ### Install Ambari Server
+
 ```yum install ambari-server```
 
 ### Setup Ambari Server
@@ -50,6 +55,7 @@ Run the setup command to configure your Ambari Server, Database, JDK, LDAP, and 
 ```ambari-server setup```
 
 ### Start Ambari Server
+
 ```ambari-server start```
 
 ### Deploy Cluster using Ambari Web UI
