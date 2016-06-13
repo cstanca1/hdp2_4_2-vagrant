@@ -38,7 +38,8 @@ Let's start ambari VM first:
 
 ```wget http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.2.2.0/ambari.repo```
 
-Add at the same path with files downloaded from the repoosity, your id_rsa and id_rsa.pub keys (see https://wiki.centos.org/HowTos/Network/SecuringSSH section 7 for instructions on CentOS). You could perform these steps on ambari1 VM and copy these two files to your /vagrant_data folder which shares data between guest and host. Only after you copy those two files, start the other three VMs (these two files are needed for sshless access):
+### SSH Access and Starting the Other Three VMs
+Add at the same path with files downloaded from the repoosity, your id_rsa and id_rsa.pub keys (see https://wiki.centos.org/HowTos/Network/SecuringSSH section 7 for instructions on CentOS). You could perform these steps on ambari1 VM and copy these two files to your /vagrant_data folder which shares data between guest and host. Only after you copy those two files, start the other three VMs:
 
 ```vagrant up master1```
 
