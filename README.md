@@ -18,17 +18,13 @@ This approach has been tested on OS X host, but it should work on all supported 
 5. Clone the Github repository:  ```git clone https://github.com/cstanca1/hdp2_4_2-vagrant.git```
 6. Change directory to hdp_2.4.2-vagrant, the folder that includes Vagrantfile and: ```mkdir data```. This /data folder will be needed for guest VMs to share with the host.
 
-## Create and Start VMs
+## Start Ambari VM
 Vagrant (via Vagrantfile) is configured to use Centos 6.7 as the base box and includes the pre-requisites for installing HDP.
 4 VMs will be created: 1 Ambari Server (ambari1), 1 Hadoop master (master1) and 2 slaves (slave1, slave2).
 
+Let's start ambari VM first:
+
 ```vagrant up ambari1```
-
-```vagrant up master1```
-
-```vagrant up slave1```
-
-```vagrant up slave2```
 
 ## Install and Setup Ambari Server
 
@@ -42,8 +38,13 @@ Vagrant (via Vagrantfile) is configured to use Centos 6.7 as the base box and in
 
 ```wget http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.2.2.0/ambari.repo```
 
-Add here your id_rsa and id_rsa.pub keys (see https://help.ubuntu.com/community/SSH/OpenSSH/Keys for instructions on Ubuntu, applicable to all flavors of Linux, including CentOS). You could perform these steps on ambari1 and copy these two files to your /vagrant folder which shares data between guest and host.
+Add at the same path with files downloaded from the repoosity, your id_rsa and id_rsa.pub keys (see https://wiki.centos.org/HowTos/Network/SecuringSSH section 7 for instructions on CentOS). You could perform these steps on ambari1 VM and copy these two files to your /vagrant_data folder which shares data between guest and host. Only after you copy those two files, start the other three VMs (these two files are needed for sshless access):
 
+```vagrant up master1```
+
+```vagrant up slave1```
+
+```vagrant up slave2```
 
 ### Install Ambari Server
 
